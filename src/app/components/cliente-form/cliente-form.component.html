@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+    <div class="container">
+      <div class="app">
+        <header class="app-header">
+            <h2>Formulário</h2>
+        </header>
+    </div>
+      
+      <div class="row v">
+        <div class="col-6">
+          <div class="card">
+            <div class="card-body">
+              <form [formGroup]="clienteForm" (ngSubmit)="submitForm()">
+                <div class="form-group">
+                  <label for="tipoCliente">Tipo de Cliente</label>
+                  <select (change)="onTipoClienteChange($event)" [(ngModel)]="tipoCliente"  class="form-control" id="tipoCliente" formControlName="tipo">
+                    <option value="fisica">Pessoa Física</option>
+                    <option value="juridica">Pessoa Jurídica</option>
+                  </select>
+                 
+                </div>
+                <div class="form-group">
+                  <label for="documento">Documento (CPF/CNPJ)</label>
+                  <input  type="text" class="form-control" id="documento" formControlName="documento">
+                  <div class="msg" *ngIf="clienteForm.get('documento')?.errors">
+                    documento obrigatório
+                   </div>
+                </div>
+                <div class="form-group">
+                  <label for="nome">Nome</label>
+                  <input type="text" class="form-control" id="nome" formControlName="nome">
+                   <div class="msg"  *ngIf="clienteForm.get('nome')?.errors">
+                    Nome obrigatório
+                   </div>
+                </div>
+                <div  *ngIf="tipoCliente == 'juridica'" class="form-group">
+                  <label for="nomeFantasia">Nome Fantasia</label>
+                  <input type="text" class="form-control" id="nomeFantasia" formControlName="nomeFantasia">
+                </div>
+                <div class="form-group">
+                  <label for="cep">CEP</label>
+                  <input type="text" class="form-control" id="cep" formControlName="cep" (blur)="buscarEndereco()">
+                  <div class="msg"  *ngIf="clienteForm.get('cep')?.errors">
+                    cep obrigatório
+                   </div>
+                </div>
+                <div class="form-group">
+                  <label for="endereco">Endereço</label>
+                  <input type="text" class="form-control" id="endereco" formControlName="endereco">
+                </div>
+                <div class="form-group">
+                  <label for="bairro">Bairro</label>
+                  <input type="text" class="form-control" id="bairro" formControlName="bairro">
+                </div>
+                <div class="form-group">
+                  <label for="cidade">Cidade</label>
+                  <input type="text" class="form-control" id="cidade" formControlName="cidade">
+                </div>
+                <div class="form-group">
+                  <label for="telefone">Telefone</label>
+                  <input type="text" class="form-control" id="telefone" formControlName="telefone">
+                  <div class="msg"  *ngIf="clienteForm.get('telefone')?.errors">
+                    telefone obrigatório
+                   </div>
+                </div>
+                <div class="form-group">
+                  <label for="email">Email</label>
+                  <input type="email" class="form-control" id="email" formControlName="email">
+                  <div class="msg"  *ngIf="clienteForm.get('email')?.errors">
+                    email obrigatório
+                   </div>
+                </div>
+                <div class=" form-group text-center">
+                  <button   type="submit">ENVIAR</button>
+                </div>              
+              </form>
+              
+            </div>
+            
+          </div> 
+                 
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+

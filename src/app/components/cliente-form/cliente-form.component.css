@@ -1,0 +1,38 @@
+.v{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+label{
+    font-weight: bold;
+}
+
+button{
+    background-color:#20B2AA ;
+    border: none;
+    padding: 20px;
+    margin-top: 15px;
+    color: white;
+    font-weight: bold;
+    border-radius: 10px;
+    width: 65%;
+}
+
+.msg{
+    color: red;
+}
+
+.app{
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  padding: 20px;
+  border-radius: 20px;
+  color: white;
+  font-weight: bold;
+  background-color: #48D1CC;
+}

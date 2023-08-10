@@ -1,0 +1,54 @@
+
+  
+  .results tr[visible='false'],
+  .no-result {
+    display: none;
+  }
+  
+  .results tr[visible='true'] {
+    display: table-row;
+  }
+  
+  .counter {
+    padding: 8px;
+    color: #ccc;
+  }
+  
+  table {
+    margin-top: 40px;
+    
+    overflow-x: auto;
+  }
+  h1{
+    font-weight: bold;
+  }
+
+
+a{
+  position: relative;
+  left: 45%;
+}
+
+ button{
+  background-color:#20B2AA ;
+  border: none;
+  color: white;
+  font-weight: bold;
+  border-radius: 10px;
+} 
+
+
+.appp{
+  position: relative;
+  top: 20px;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  border-radius: 20px;
+  color: white;
+  font-weight: bold;
+  background-color: #48D1CC;
+ 
+}

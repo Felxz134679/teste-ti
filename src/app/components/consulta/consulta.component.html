@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="container">
+    <div class="appp">
+      <header class="app-header">
+          <h2>Tabela de Consulta</h2>
+      </header>
+    </div>
+  </div>
+  
+  <div class="table-responsive">
+    
+      
+
+    <table class="table table-hover table-bordered results">
+
+      <thead>
+
+        <tr>
+          <th>
+          </th>
+
+          <th class="col-md-3 col-sm-4 col-6">codigo</th>
+          <th class="col-md-3 col-sm-4 col-6">nome</th>
+          <th class="col-md-3 col-sm-4 d-none d-sm-table-cell">endereço</th>
+          <th class="col-md-3 col-sm-4 d-none d-sm-table-cell">email</th>
+        </tr>
+        <tr class="warning no-result">
+          <td colspan="4"><i class="fa fa-warning"></i> No result</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr >
+          <th scope="row"></th>
+          <td>None</td>
+          <td>None</td>
+          <td class="d-none d-sm-table-cell">None</td>
+      
+          <td class="d-none d-sm-table-cell"><a class="" routerLink="/cadastrar" routerLinkActive="selected" href=""><button class="">Novo</button></a>
+          </td>
+        </tr>
+        <tr *ngFor="let cliente of clientes">
+          <th scope="row"></th>
+          <td>{{ cliente.cep }}</td>
+          <td>{{ cliente.nome }}</td>
+          <td class="d-none d-sm-table-cell">{{ cliente.endereco }}</td>
+          <td class="d-none d-sm-table-cell">{{ cliente.email }}</td>        
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+
+</body>
+</html>
