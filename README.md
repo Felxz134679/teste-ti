@@ -7,7 +7,7 @@
 <img src="/assets/form.png" alt="Exemplo imagem">
 >Formulário de cadastro feito com AngularJS com página de consulta.
 
-### Ajustes e melhorias
+### Caracteristicas
 
 O projeto conta com as seguintes caracteristicas:
 
