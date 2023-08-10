@@ -13,7 +13,6 @@ export class ClienteFormComponent implements OnInit {
   alerta:boolean = false
   tipoCliente: string = "Fisica";
   
-  
 
   constructor(private fb: FormBuilder, private http: HttpClient,private router:Router) {}
 
@@ -27,9 +26,9 @@ export class ClienteFormComponent implements OnInit {
     this.clienteForm = this.fb.group({
       tipo: ['fisica', Validators.required],
       documento: ['', [Validators.required,Validators.minLength(11),Validators.maxLength(14)]],
-      nome: ['', Validators.required,Validators.minLength(6)],
+      nome: ['', [Validators.required, Validators.minLength(6)]], // Correção aqui
       nomeFantasia: [''],
-      cep: ['', [Validators.required, this.validarCep]],
+      cep: ['', [Validators.required ,this.validarCep]],
       endereco: [''],
       bairro: [''],
       cidade: [''],
@@ -41,7 +40,6 @@ export class ClienteFormComponent implements OnInit {
 
   onTipoClienteChange(event: any) {
     this.tipoCliente = event.target.value;
-    console.log(event.target.value)
   }
 
   //validação
@@ -84,16 +82,17 @@ export class ClienteFormComponent implements OnInit {
   }
 
   submitForm() {
-    if (this.clienteForm.valid) {
+     if (this.clienteForm.valid) {
       const clienteData = this.clienteForm.value;
-      const clientes = JSON.parse(localStorage.getItem('clientes') || '[]');
+      console.log(clienteData);
+       const clientes = JSON.parse(localStorage.getItem('clientes') || '[]');
       clientes.push(clienteData);
-      localStorage.setItem('clientes', JSON.stringify(clientes));
+       localStorage.setItem('clientes', JSON.stringify(clientes));
     
-    // Redirecionar para a página de consulta
-    this.router.navigate(['']);
-    } else {
-      alert('digite corretamente os campos!!')
-    }
+      //Redirecionar para a página de consulta
+      this.router.navigate(['']);
+     } else {
+       alert('digite corretamente os campos!!')
+     }
   }
 }
