@@ -4,7 +4,7 @@
 
 
 
-<img src="/assets/form.png" alt="Exemplo imagem">
+<img src="src/assets/form.png" alt="Exemplo imagem">
 >Formulário de cadastro feito com AngularJS com página de consulta.
 
 ### Caracteristicas
